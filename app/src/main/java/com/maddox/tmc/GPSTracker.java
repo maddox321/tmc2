@@ -8,8 +8,10 @@ package com.maddox.tmc;
  * In project TMC.
  */
 
+import android.app.AlertDialog;
 import android.app.Service;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
@@ -32,39 +34,43 @@ public class GPSTracker implements LocationListener {
 
     protected LocationManager locationManager;
     private Location m_Location;
+
     public GPSTracker(Context context) {
         this.mContext = context;
         m_Location = getLocation();
-        System.out.println("location Latitude:"+m_Location.getLatitude());
-        System.out.println("location Longitude:"+m_Location.getLongitude());
-        System.out.println("getLocation():"+getLocation());
+//        System.out.println("location Latitude:"+m_Location.getLatitude());
+//        System.out.println("location Longitude:"+m_Location.getLongitude());
+//        System.out.println("getLocation():"+getLocation());
     }
 
     public Location getLocation() {
         try {
-            locationManager = (LocationManager) mContext
-                    .getSystemService(Context.LOCATION_SERVICE);
-
-            isGPSEnabled = locationManager
-                    .isProviderEnabled(LocationManager.GPS_PROVIDER);
-
-            isNetworkEnabled = locationManager
-                    .isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-
+            locationManager = (LocationManager) mContext.getSystemService(Context.LOCATION_SERVICE);
+            isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+            isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
             if (!isGPSEnabled && !isNetworkEnabled) {
-                // no network provider is enabled
+                new AlertDialog.Builder(mContext)
+                    .setTitle("Some connection needed!")
+                    .setMessage("Please turn on GPS")
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // jakas akcja moze kiedys sie pojawi ?
+                        }
+                    })
+                    .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // jakas akcja moze kiedys sie pojawi ?
+                        }
+                    })
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
             }
             else {
                 this.canGetLocation = true;
                 if (isNetworkEnabled) {
-                    locationManager.requestLocationUpdates(
-                            LocationManager.NETWORK_PROVIDER,
-                            MIN_TIME_BW_UPDATES,
-                            MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
-                    Log.d("Network", "Network Enabled");
+                    locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,MIN_TIME_BW_UPDATES,MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
                     if (locationManager != null) {
-                        location = locationManager
-                                .getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+                        location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
                         if (location != null) {
                             latitude = location.getLatitude();
                             longitude = location.getLongitude();
@@ -73,14 +79,9 @@ public class GPSTracker implements LocationListener {
                 }
                 if (isGPSEnabled) {
                     if (location == null) {
-                        locationManager.requestLocationUpdates(
-                                LocationManager.GPS_PROVIDER,
-                                MIN_TIME_BW_UPDATES,
-                                MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
-                        Log.d("GPS", "GPS Enabled");
+                        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,MIN_TIME_BW_UPDATES,MIN_DISTANCE_CHANGE_FOR_UPDATES, this);
                         if (locationManager != null) {
-                            location = locationManager
-                                    .getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                            location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
                             if (location != null) {
                                 latitude = location.getLatitude();
                                 longitude = location.getLongitude();
@@ -89,14 +90,12 @@ public class GPSTracker implements LocationListener {
                     }
                 }
             }
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return location;
     }
-
+    
     public void stopUsingGPS() {
         if (locationManager != null) {
             locationManager.removeUpdates(GPSTracker.this);
@@ -107,7 +106,6 @@ public class GPSTracker implements LocationListener {
         if (location != null) {
             latitude = location.getLatitude();
         }
-
         return latitude;
     }
 
@@ -115,7 +113,6 @@ public class GPSTracker implements LocationListener {
         if (location != null) {
             longitude = location.getLongitude();
         }
-
         return longitude;
     }
 
