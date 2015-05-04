@@ -9,16 +9,12 @@ package com.maddox.tmc;
  */
 
 import android.app.AlertDialog;
-import android.app.Service;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.util.Log;
 
 public class GPSTracker implements LocationListener {
     private final Context mContext;
@@ -38,9 +34,6 @@ public class GPSTracker implements LocationListener {
     public GPSTracker(Context context) {
         this.mContext = context;
         m_Location = getLocation();
-//        System.out.println("location Latitude:"+m_Location.getLatitude());
-//        System.out.println("location Longitude:"+m_Location.getLongitude());
-//        System.out.println("getLocation():"+getLocation());
     }
 
     public Location getLocation() {
@@ -95,7 +88,7 @@ public class GPSTracker implements LocationListener {
         }
         return location;
     }
-    
+
     public void stopUsingGPS() {
         if (locationManager != null) {
             locationManager.removeUpdates(GPSTracker.this);
