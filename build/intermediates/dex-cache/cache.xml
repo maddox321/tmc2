@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Maddox\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="C:\Users\Maddox\AndroidStudioProjects\TMC\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-8882e48f9010b2e725222d56c4f82777027408bc.jar" />
+    </item>
+    <item
+        jar="C:\Users\Maddox\AndroidStudioProjects\TMC\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="C:\Users\Maddox\AndroidStudioProjects\TMC\app\build\intermediates\pre-dexed\debug\classes-5df9f538e932514905e3ccce0f0947023651551a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Maddox\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.7.12\8e20852d05222dc286bf1c71d78d0531e177c317\slf4j-api-1.7.12.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8e20852d05222dc286bf1c71d78d0531e177c317">
+        <dex dex="C:\Users\Maddox\AndroidStudioProjects\TMC\app\build\intermediates\pre-dexed\debug\slf4j-api-1.7.12-e167bb4e4c64cc3ca53ddefea11d5e572d3a0aa5.jar" />
+    </item>
+    <item
+        jar="C:\Users\Maddox\.gradle\caches\modules-2\files-2.1\org.osmdroid\osmdroid-android\4.3\2fcf7bc3cb27daa6e67c8990ea418d19f6b5b296\osmdroid-android-4.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2fcf7bc3cb27daa6e67c8990ea418d19f6b5b296">
+        <dex dex="C:\Users\Maddox\AndroidStudioProjects\TMC\app\build\intermediates\pre-dexed\debug\osmdroid-android-4.3-60e6c0545b6436867f49a95ecc616e21afc262ed.jar" />
+    </item>
+    <item
+        jar="C:\Users\Maddox\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-android\1.7.12\16d02a21e200a67e6ae6bbb3367eebe062a4a769\slf4j-android-1.7.12.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="16d02a21e200a67e6ae6bbb3367eebe062a4a769">
+        <dex dex="C:\Users\Maddox\AndroidStudioProjects\TMC\app\build\intermediates\pre-dexed\debug\slf4j-android-1.7.12-2a003388416671ede9d2f1a4c2883dca6b617d97.jar" />
+    </item>
+    <item
+        jar="C:\Users\Maddox\AndroidStudioProjects\TMC\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\Users\Maddox\AndroidStudioProjects\TMC\app\build\intermediates\pre-dexed\debug\classes-edb7318cb8c464d0136e8cc766a58d84ad4400ed.jar" />
+    </item>
+    <item
+        jar="C:\Users\Maddox\AndroidStudioProjects\TMC\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\Users\Maddox\AndroidStudioProjects\TMC\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-687b4c275e7806b983c1adf4d894ca8476af1594.jar" />
+    </item>
+
+</items>
