@@ -42,7 +42,7 @@ import static android.graphics.Paint.*;
 
 
 public class MapActivity extends ActionBarActivity {
-
+//test//
     private MapView mapView;
     private GPSTracker gpsTracker;
 //    private MapController mapController;
